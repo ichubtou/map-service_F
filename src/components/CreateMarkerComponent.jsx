@@ -13,7 +13,7 @@ class CreateMarkerComponent extends Component {
             markerLongitude: '',
             markerLatitude: '',
             posterNickName: ''
-        }
+        };
 
         this.cancel = this.cancel.bind(this);
 
