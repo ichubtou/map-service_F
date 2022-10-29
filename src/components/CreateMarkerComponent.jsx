@@ -90,7 +90,7 @@ class CreateMarkerComponent extends Component {
         if (this.state.markerId === '_create') {
             return <h3 className="text-center">새 마커를 작성해주세요</h3>
         } else {
-            return <h3 className="text-center">{this.state.markerId}마커를 수정 합니다.</h3>
+            return <h3 className="text-center">마커를 수정 합니다.</h3>
         }
     }
 
@@ -122,8 +122,9 @@ class CreateMarkerComponent extends Component {
                 <div className = "container">
                     <div className = "row">
                         <div className = "card col-md-6 offset-md-3 offset-md-3">
-                            <br></br>
-                            <h3 className="text-center">마커을 작성해주세요</h3>
+                            {
+                                this.getTitle()
+                            }
                             <div className = "card-body">
                                     <div className = "form-group">
                                         <label> 위험, 안전 </label>
