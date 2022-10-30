@@ -15,8 +15,10 @@ class HeaderComponent extends Component {
         if(this.state.tokentime !==null && this.state.tokentime < new Date().getTime()) {
             localStorage.removeItem('token');
             localStorage.removeItem('tokentime');
-            alert("30분이 지나 자동 로그아웃 되었습니다.")
-        }
+            alert("30분이 지나 자동 로그아웃 되었습니다.");
+            window.location.replace("/marker");
+            this.reload();
+        }   
     }
 
     checklogin() {
@@ -24,7 +26,7 @@ class HeaderComponent extends Component {
             return <><div><a href="/singup" className="navbar-brand " style={{ color: 'black', marginLeft: '500px' }}>회원가입</a></div><div><a href="/login" className="navbar-brand " style={{ color: 'black' }}>로그인</a></div></>
         }
         else {
-            return <><div><a href="/mypage" className="navbar-brand " style={{ color: 'black', marginLeft: '500px' }}>내 정보</a></div><div><a ferf='#' onClick={this.logout} className="navbar-brand " style={{ color: 'black' }}>로그아웃</a></div></>
+            return <><div><a href="/infochange" className="navbar-brand " style={{ color: 'black', marginLeft: '500px' }}>내 정보</a></div><div><a herf='#' onClick={this.logout} className="navbar-brand " style={{ color: 'black' }}>로그아웃</a></div></>
         } 
     }
 
@@ -34,11 +36,9 @@ class HeaderComponent extends Component {
         alert("로그아웃 되었습니다.")
         window.location.replace("/marker");
             this.reload();
-        
     }
     
     render() {
-        
         return (
             <div>
                 <header >

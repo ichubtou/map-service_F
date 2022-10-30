@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 import MarkerService from '../service/MarkerService';
+import MemberService from '../service/MemberService';
 class ListMarkerComponent extends Component {
 
     
@@ -19,7 +20,6 @@ class ListMarkerComponent extends Component {
     
     
     componentDidMount() {
-
         MarkerService.getMarkers().then((res) => {
             this.setState({ markers: res.data });
         });

@@ -8,6 +8,7 @@ import CreateMarkerComponent from './components/CreateMarkerComponent';
 import ReadMarkerComponent from './components/ReadMarkerComponent';
 import SignupComponent from './components/SignupComponent';
 import LoginComponent from './components/LoginComponent';
+import MemberInfoChange from './components/MemberInfoChange';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/read-marker/:markerId" component={ReadMarkerComponent}></Route>
             <Route path="/singup" component={SignupComponent}></Route>
             <Route path="/login" component={LoginComponent}></Route>
+            <Route path="/infochange" component={MemberInfoChange}></Route>
           </Switch>
         </div>
     <FooterComponent/>

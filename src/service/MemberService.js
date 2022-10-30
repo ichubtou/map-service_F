@@ -1,4 +1,5 @@
 import axios from 'axios';
+import MarkerService from './MarkerService';
 
 const MARKER_API_BASE_URL = "http://localhost:8080"; 
 
@@ -20,8 +21,26 @@ class MemberService {
         return axios.post(MARKER_API_BASE_URL + "/auth/login", member);
     }
 
-    checktoken() {
+    getmemberinfo() {
         return axios.get(MARKER_API_BASE_URL + "/member/me", {
+            headers : {
+                Authorization : localStorage.getItem('token')
+            }
+        })
+    }
+
+    changenickname(usermodel) {
+        return axios.post(MARKER_API_BASE_URL + "/member/nickname",
+           usermodel
+        , {
+            headers : {
+                Authorization : localStorage.getItem('token')
+            }
+        })
+    }
+
+    changepassword(changepassword) {
+        return axios.post(MARKER_API_BASE_URL + "/member/password", changepassword, {
             headers : {
                 Authorization : localStorage.getItem('token')
             }

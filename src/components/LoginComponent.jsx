@@ -95,7 +95,7 @@ class LoginComponent extends Component {
                                     <br/>
                                     <div className = "form-group">
                                     <label> 비밀번호 </label>
-                                        <input type="text" placeholder="비밀번호" name="password" className="form-control" 
+                                        <input type="password" placeholder="비밀번호" name="password" className="form-control" 
                                         value={this.state.password} onChange={this.changepasswordHandler}/>
                                     </div>
                                     <br/>
