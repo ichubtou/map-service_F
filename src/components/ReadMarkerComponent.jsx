@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MarkerService from '../service/MarkerService';
+import MemberService from '../service/MemberService';
 
 class ReadMarkerComponent extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class ReadMarkerComponent extends Component {
         
         this.state = { 
             markerId: this.props.match.params.markerId,
-            marker: {}
+            marker: {}            
         }
 
         this.goToUpdate = this.goToUpdate.bind(this);
@@ -20,6 +21,8 @@ class ReadMarkerComponent extends Component {
         MarkerService.getOneMarker(this.state.markerId).then( res => {
             this.setState({marker: res.data});
         });
+
+        
     }
 
     
@@ -61,18 +64,29 @@ class ReadMarkerComponent extends Component {
         
     }
 
-    deleteMarker = async function () {
-        if(window.confirm("정말로 마커을 삭제하시겠습니까?\n삭제된 마커은 복구 할 수 없습니다.")) {
-            MarkerService.deleteMarker(this.state.markerId).then( res => {
-                console.log("delete result => " + JSON.stringify(res));
-                if (res.status == 200 ) {
-                    window.location.replace("/marker")
+    deleteMarker() {
+        let nickname;
+        MemberService.getmemberinfo().then((res) => {
+            nickname = res.data.nickname;
+            if(this.state.marker.posterNickName !== nickname) {
+                alert("권한이 없습니다.");
+            }
+            else{
+                if(window.confirm("정말로 마커을 삭제하시겠습니까?\n삭제된 마커은 복구 할 수 없습니다.")) {
+                    MarkerService.deleteMarker(this.state.markerId).then( res => {
+                        console.log("delete result => " + JSON.stringify(res));
+                        if (res.status == 200 ) {
+                            window.location.replace("/marker")
+                        }
+                        else {
+                            alert("마커 삭제가 실패했습니다.");
+                        }
+                    });
                 }
-                else {
-                    alert("마커 삭제가 실패했습니다.");
-                }
-            });
-        }
+            }
+        })
+            
+        
     }
 
     render() {

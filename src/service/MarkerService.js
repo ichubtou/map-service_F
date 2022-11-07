@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const MARKER_API_BASE_URL = "http://localhost:8080/api/marker"; 
+const MARKER_API_BASE_URL = "http://3.38.39.142:8080/api/marker"; 
 
 class MarkerService {
 

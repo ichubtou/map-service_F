@@ -150,9 +150,9 @@ class SignupComponent extends Component {
                                     </div>
                                     <br/>
                                     {/* const content='<form id="marker-maker" action="/create-marker"><button class="btn btn-primary" type="action">여기에 마커 만들기</button></form>'; */}
-                                    <button className="btn btn-success" onClick={this.createMember}>Save</button>
+                                    <button className="btn btn-success" onClick={this.createMember}>회원가입</button>
 
-                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>
+                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>돌아가기</button>
                                 {/* </form> */}
                             </div>
                         </div>
