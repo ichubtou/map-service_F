@@ -166,9 +166,17 @@ class CreateMarkerComponent extends Component {
                                         value={this.state.markerCategory} onChange={this.changeMarkerCategoryHandler}>
                                         <option value="">선택</option>
                                         <option disabled> 위험 </option>
-                                        <option value="1">어린이 보호 구역</option>
+                                        <option value="1">공사장</option>
+                                        <option value="2">보행사고다발지역</option>
+                                        <option value="3">스쿨존사고주의구간</option>
+                                        <option value="4">어린이보호구역</option>
+                                        <option value="5">범죄주의구간</option>
                                         <option disabled> 안전 </option>
-                                        <option value="2">경찰서</option>
+                                        <option value="6">파출소</option>
+                                        <option value="7">치안센터</option>
+                                        <option value="8">경찰서</option>
+                                        <option value="9">지구대</option>
+                                        <option value="10">안심벨</option>
                                     </select>
                                 </div>
                                 <br />

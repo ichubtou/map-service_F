@@ -23,10 +23,10 @@ class HeaderComponent extends Component {
 
     checklogin() {
         if(this.state.tokentime === null){
-            return <><div><a href="/singup" className="navbar-brand " style={{ color: 'black', marginLeft: '500px' }}>회원가입</a></div><div><a href="/login" className="navbar-brand " style={{ color: 'black' }}>로그인</a></div></>
+            return <><div><a href="/singup" className="navbar-brand " style={{ color: 'black', marginLeft: '600px' }}>회원가입</a></div><div><a href="/login" className="navbar-brand " style={{ color: 'black' }}>로그인</a></div></>
         }
         else {
-            return <><div><a href="/infochange" className="navbar-brand " style={{ color: 'black', marginLeft: '500px' }}>내 정보</a></div><div><a herf='#' onClick={this.logout} className="navbar-brand " style={{ color: 'black' }}>로그아웃</a></div></>
+            return <><div><a href="/infochange" className="navbar-brand " style={{ color: 'black', marginLeft: '600px' }}>마이페이지</a></div><div><a herf='#' onClick={this.logout} className="navbar-brand " style={{ color: 'black' }}>로그아웃</a></div></>
         } 
     }
 
@@ -43,7 +43,7 @@ class HeaderComponent extends Component {
             <div>
                 <header >
                     <nav className="navbar navbar-expand-md navbar-black bg-white" style={{ justifyContent:'center'}}>
-                        <div ><div><a href="http://localhost:3000" className="navbar-brand " style={{color:'black', marginLeft:'600px'}}> 어린이 안전 지도</a></div></div>
+                        <div ><div><a href="http://localhost:3000" className="navbar-brand " style={{color:'black', marginLeft:'800px'}}> 어린이 안전 지도</a></div></div>
                         {
                         this.checklogin()
                         }

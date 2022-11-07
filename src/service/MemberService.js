@@ -1,7 +1,7 @@
 import axios from 'axios';
 import MarkerService from './MarkerService';
 
-const MARKER_API_BASE_URL = "http://localhost:8080"; 
+const MARKER_API_BASE_URL = "http://3.38.39.142:8080"; 
 
 class MemberService {
 

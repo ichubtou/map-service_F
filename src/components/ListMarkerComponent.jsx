@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 
 import MarkerService from '../service/MarkerService';
-import MemberService from '../service/MemberService';
 class ListMarkerComponent extends Component {
 
     
@@ -20,6 +19,7 @@ class ListMarkerComponent extends Component {
     
     
     componentDidMount() {
+
         MarkerService.getMarkers().then((res) => {
             this.setState({ markers: res.data });
         });
@@ -195,10 +195,34 @@ class ListMarkerComponent extends Component {
                     if(type == 'all'){
                         for (var i = 0; i < positions.length; i++) {
                     if (positions[i].markerCategory == 1) {
-                        positions[i].markerCategory = "어린이 보호 구역";
+                        positions[i].markerCategory = "공사장";
                     }
                     else if (positions[i].markerCategory == 2) {
+                        positions[i].markerCategory = "보행사고다발지역";
+                    }
+                    else if (positions[i].markerCategory == 3) {
+                        positions[i].markerCategory = "스쿨존사고주의구간";
+                    }
+                    else if (positions[i].markerCategory == 4) {
+                        positions[i].markerCategory = "어린이보호구역";
+                    }
+                    else if (positions[i].markerCategory == 5) {
+                        positions[i].markerCategory = "범죄주의구간";
+                    }
+                    else if (positions[i].markerCategory == 6) {
+                        positions[i].markerCategory = "파출소";
+                    }
+                    else if (positions[i].markerCategory == 7) {
+                        positions[i].markerCategory = "치안센터";
+                    }
+                    else if (positions[i].markerCategory == 8) {
                         positions[i].markerCategory = "경찰서";
+                    }
+                    else if (positions[i].markerCategory == 9) {
+                        positions[i].markerCategory = "지구대";
+                    }
+                    else if (positions[i].markerCategory == 10) {
+                        positions[i].markerCategory = "안심벨";
                     }
 
                     kakao.maps.event.addListener(map, 'click', function () {
@@ -265,10 +289,34 @@ class ListMarkerComponent extends Component {
                 else if(type == 'danger'){
                     for (var i = 0; i < positions.length; i++) {
                         if (positions[i].markerCategory == 1) {
-                            positions[i].markerCategory = "어린이 보호 구역";
+                            positions[i].markerCategory = "공사장";
                         }
                         else if (positions[i].markerCategory == 2) {
+                            positions[i].markerCategory = "보행사고다발지역";
+                        }
+                        else if (positions[i].markerCategory == 3) {
+                            positions[i].markerCategory = "스쿨존사고주의구간";
+                        }
+                        else if (positions[i].markerCategory == 4) {
+                            positions[i].markerCategory = "어린이보호구역";
+                        }
+                        else if (positions[i].markerCategory == 5) {
+                            positions[i].markerCategory = "범죄주의구간";
+                        }
+                        else if (positions[i].markerCategory == 6) {
+                            positions[i].markerCategory = "파출소";
+                        }
+                        else if (positions[i].markerCategory == 7) {
+                            positions[i].markerCategory = "치안센터";
+                        }
+                        else if (positions[i].markerCategory == 8) {
                             positions[i].markerCategory = "경찰서";
+                        }
+                        else if (positions[i].markerCategory == 9) {
+                            positions[i].markerCategory = "지구대";
+                        }
+                        else if (positions[i].markerCategory == 10) {
+                            positions[i].markerCategory = "안심벨";
                         }
     
                         kakao.maps.event.addListener(map, 'click', function () {
@@ -335,10 +383,34 @@ class ListMarkerComponent extends Component {
                 else if(type=='safe') {
                     for (var i = 0; i < positions.length; i++) {
                         if (positions[i].markerCategory == 1) {
-                            positions[i].markerCategory = "어린이 보호 구역";
+                            positions[i].markerCategory = "공사장";
                         }
                         else if (positions[i].markerCategory == 2) {
+                            positions[i].markerCategory = "보행사고다발지역";
+                        }
+                        else if (positions[i].markerCategory == 3) {
+                            positions[i].markerCategory = "스쿨존사고주의구간";
+                        }
+                        else if (positions[i].markerCategory == 4) {
+                            positions[i].markerCategory = "어린이보호구역";
+                        }
+                        else if (positions[i].markerCategory == 5) {
+                            positions[i].markerCategory = "범죄주의구간";
+                        }
+                        else if (positions[i].markerCategory == 6) {
+                            positions[i].markerCategory = "파출소";
+                        }
+                        else if (positions[i].markerCategory == 7) {
+                            positions[i].markerCategory = "치안센터";
+                        }
+                        else if (positions[i].markerCategory == 8) {
                             positions[i].markerCategory = "경찰서";
+                        }
+                        else if (positions[i].markerCategory == 9) {
+                            positions[i].markerCategory = "지구대";
+                        }
+                        else if (positions[i].markerCategory == 10) {
+                            positions[i].markerCategory = "안심벨";
                         }
     
                         kakao.maps.event.addListener(map, 'click', function () {
@@ -459,5 +531,3 @@ class ListMarkerComponent extends Component {
 }
 
 export default ListMarkerComponent;
-
-
